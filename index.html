@@ -1,7 +1,108 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://bugs-music.it/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>albertoboccolini</title>
+  </head>
+  <body onload="show('popup1')">
+    <main>
+      <div
+        class="popup"
+        id="popup1"
+        style="
+          visibility: hidden;
+          animation-name: animationClose;
+          animation-duration: 0.6s;
+        "
+      >
+        <a
+          href="#"
+          onclick="hide('popup1')"
+          id="close"
+          oncontextmenu="return false;"
+          ;=""
+          >X</a
+        ><br />
+        <h1 id="testoPopupLoad">VUOI LAVORARE CON ME?</h1>
+        <a
+          href="mailto:albertoboccolini03@gmail.com"
+          id="linkPopupLoad"
+          target="_blank"
+          >CONTATTAMI</a
+        ><br />
+      </div>
+      <a href="" id="imgIndex"
+        ><h3 id="testoIMG">albertoboccolini</h3><!--<img src="bugs-logo.png" alt="bugs-logo"
+      />--></a>
+      <a
+        href="#"
+        id="chiSono"
+        onclick="show('popup2')"
+        oncontextmenu="return false;"
+        ;=""
+        ><b>CHI SONO?</b></a
+      >
+
+      <div class="popup" id="popup2">
+        <a
+          href="#"
+          onclick="hide('popup2')"
+          id="close"
+          oncontextmenu="return false;"
+          ;=""
+          >X</a
+        ><br />
+      </div>
+      <a
+        href="https://open.spotify.com/artist/2bqiiJtKgBY1jLcFa93QMX"
+        target="_blank"
+        id="spotify-link"
+        ;=""
+        ><img
+          src="https://bugs-music.it/spotify.png"
+          alt="spotify-logo"
+          id="spotify"
+      /></a>
+      <a
+        href="https://www.youtube.com/channel/UCcjxFVcLHrvKFeSpoq0oFpQ"
+        target="_blank"
+        id="youtube-link"
+        ;=""
+        ><img
+          src="https://bugs-music.it/youtube.png"
+          alt="youtube-logo"
+          id="youtube"
+      /></a>
+      <a
+        href="https://www.instagram.com/bugsmusica"
+        target="_blank"
+        id="insta-link"
+        ;=""
+        ><img src="https://bugs-music.it/insta.png" alt="insta-logo" id="insta"
+      /></a>
+
+      <script>
+        $ = function (id) {
+          return document.getElementById(id);
+        };
+        var show = function (id) {
+          $(id).style.visibility = "visible";
+          $(id).style.animationName = "animationSee";
+          $(id).style.animationDuration = "0.6s";
+        };
+        var hide = function (id) {
+          $(id).style.visibility = "hidden";
+          $(id).style.animationName = "animationClose";
+          $(id).style.animationDuration = "0.6s";
+        };
+      </script>
+    </main>
+  </body>
 </html>

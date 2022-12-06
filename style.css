@@ -1,0 +1,444 @@
+@keyframes animationSee {
+    0% {
+      opacity: 0;
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+      display: grid;
+    }
+  }
+  @keyframes animationClose {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+    }
+  }
+  
+  :root {
+    --popup_background: rgba(0, 0, 0, 0.9);
+    --popup_text_color: black;
+    filter: invert(1);
+  }
+  body {
+    overflow: hidden;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  main {
+    display: grid;
+    grid-template-areas:
+      "headerImage headerImage headerImage"
+      "listenButton listenButton listenButton"
+      "endLink endLink endLink";
+    grid-template-rows: 5fr 10fr 5fr;
+    grid-template-columns: auto auto auto;
+    margin: auto;
+  }
+  .popup {
+    display: grid;
+    grid-template-areas:
+      "closeButton closeButton closeButton";
+    grid-template-columns: auto auto 20vmin;
+    margin: auto;
+    visibility: hidden;
+    position: fixed;
+    text-align: center;
+    font-size: 1.5vw;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--popup_background);
+    z-index: 20;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  #popup1 {
+    display: grid;
+    grid-template-areas:
+      "closeButton closeButton closeButton"
+      "link link link"
+      "link link link"
+      "link link link"
+      "link link link"
+      "link link link"
+      "link link link"
+      "link link link"
+      "link link link";
+    grid-template-columns: 1.1fr 1fr 20vmin;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  }
+  #popup1:after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -2;
+  }
+  #popup1:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--popup_background);
+    z-index: -1;
+  }
+  #testoPopupLoad {
+    font-size: 15pt;
+    grid-area: link;
+    margin: auto;
+    margin-right: 0;
+    width: 20vmax;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 5;
+    grid-row-end: 5;
+  }
+  #linkPopupLoad {
+    font-size: 15pt;
+    grid-area: link;
+    border: 5px solid white;
+    margin: auto;
+    padding: 2vh;
+    width: 15vmax;
+    margin-left: 10vmin;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    border-radius: 50px;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  #linkPopupLoad:hover {
+    background-color: white;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+    color: var(--popup_text_color);
+  }
+  #popup2:after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -2;
+  }
+  #popup2:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--popup_background);
+    z-index: -1;
+  }
+  #close {
+    grid-area: closeButton;
+    grid-column-start: 3;
+    font-size: 2vw;
+    margin: auto;
+    margin-top: 3vh;
+    grid-auto-flow: column;
+    color: white;
+    padding: 2vh;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    border: none;
+    border-radius: 10px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #close:hover {
+    background-color: white;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+    color: var(--popup_text_color);
+  }
+  #testoIMG {
+    width: 25vmin;
+    height: 5vmin;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #testoIMG:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+  #imgIndex {
+    z-index: 1;
+    grid-area: headerImage;
+    width: 50vmin;
+    height: 20vmin;
+    margin: 6vmin;
+    margin-bottom: 0%;
+  }
+  #chiSono {
+    grid-area: listenButton;
+    z-index: 1;
+    font-size: 4vmin;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    padding: 3vh;
+    width: 20vmax;
+    border-radius: 50px;
+    border: 6px solid white;
+    color: white;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #chiSono:hover {
+    background-color: white;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+    color: black;
+  }
+  a {
+    text-decoration: none;
+  }
+  #testoPopup:hover {
+    background-color: white;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+    color: var(--popup_text_color);
+  }
+  a:visited {
+    color: white;
+  }
+  #spotify {
+    width: 4vmin;
+    height: 4vmin;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #youtube {
+    width: 5vmin;
+    height: 5vmin;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #insta {
+    width: 4vmin;
+    height: 4vmin;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #spotify-link {
+    z-index: 1;
+    grid-area: endLink;
+    margin: auto;
+    margin-left: 45vmax;
+  }
+  #youtube-link {
+    z-index: 1;
+    grid-area: endLink;
+    margin: auto;
+  }
+  #insta-link {
+    z-index: 1;
+    grid-area: endLink;
+    margin: auto;
+    margin-right: 45vmax;
+  }
+  #spotify:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  #insta:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  #youtube:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  /*telefono*/
+  @media screen and (max-width: 460px) and (max-height: 926px) {
+    :root {
+      -webkit-tap-highlight-color: transparent;
+    }
+    main {
+      grid-template-rows: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .popup {
+      font-size: 5vw;
+      grid-template-rows: 1fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr;
+      grid-template-columns: auto auto 20vmin;
+    }
+    #popup1 {
+      display: grid;
+      grid-template-areas:
+        "closeButton closeButton closeButton"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link"
+        "link link link";
+      grid-template-columns: 20% 60% 20%;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    #testoPopupLoad {
+      font-size: 2vmax;
+      margin: auto;
+      width: 30vmax;
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 5;
+      grid-row-end: 5;
+    }
+    #linkPopupLoad {
+      font-size: 12pt;
+      grid-area: link;
+      margin: auto;
+      margin-top: 0;
+      padding: 2vh;
+      width: 20vmax;
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 6;
+      grid-row-end: 6;
+      border: 4px solid white;
+    }
+    #close {
+      font-size: 5vw;
+      padding: 1.5vh;
+      width: 2vh;
+      border-radius: 5px;
+    }
+    #imgIndex {
+      width: 30vmin;
+      height: 30vmin;
+    }
+    #testoIMG {
+      font-size: 3vh;
+    }
+    #chiSono {
+      font-size: 5vmin;
+      margin-top: 50%;
+      width: 23vmax;
+      border: 4px solid white;
+    }
+    #spotify {
+      width: 7vmin;
+      height: 7vmin;
+    }
+    #youtube {
+      width: 9vmin;
+      height: 9vmin;
+    }
+    #insta {
+      width: 7vmin;
+      height: 7vmin;
+    }
+    #insta-link {
+      grid-column-start: 1;
+      margin-right: 32%;
+      margin-bottom: 30%;
+    }
+    #spotify-link {
+      grid-column-start: 1;
+      margin-left: 32%;
+      margin-bottom: 30%;
+    }
+    #youtube-link {
+      grid-column-start: 1;
+      margin-bottom: 29%;
+    }
+  }
+  /*tablet*/
+  @media screen and (min-width: 460px) and (min-height: 926px) and (max-width: 1024px) and (max-height: 1368px) {
+    :root {
+      -webkit-tap-highlight-color: transparent;
+    }
+    main {
+      grid-template-rows: 1fr 2.5fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .popup {
+      font-size: 5vw;
+    }
+    #close {
+      font-size: 5vw;
+      border-radius: 5px;
+    }
+    #bgPC {
+      display: none;
+    }
+    #bgSmartphone {
+      display: block;
+      position: fixed;
+      right: -20vw;
+      top: -12vh;
+      width: 140%;
+      height: 140%;
+    }
+    #imgIndex {
+      margin: initial;
+      z-index: 1;
+      grid-area: headerImage;
+      width: 30vmin;
+      height: 30vmin;
+    }
+    img {
+      margin: initial;
+      width: 30vmin;
+      height: 30vmin;
+    }
+    #chiSono {
+      border: 4px solid white;
+      margin-top: 40%;
+    }
+    #spotify {
+      width: 6vmin;
+      height: 6vmin;
+    }
+    #youtube {
+      width: 8vmin;
+      height: 8vmin;
+    }
+    #insta {
+      width: 6vmin;
+      height: 6vmin;
+    }
+    #insta-link {
+      grid-column-start: 1;
+      margin-right: 20%;
+      margin-bottom: 11%;
+    }
+    #spotify-link {
+      grid-column-start: 1;
+      margin-left: 20%;
+      margin-bottom: 11%;
+    }
+    #youtube-link {
+      grid-column-start: 1;
+      margin-bottom: 10%;
+    }
+  }
+  
